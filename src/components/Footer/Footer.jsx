@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <div className="f-wrapper">
@@ -11,6 +13,12 @@ const Footer = () => {
             Our vision is to make all people <br />
             the best place to live for them.
           </span>
+          <div className="social-icons">
+            <a href="#facebook"><FaFacebookF /></a>
+            <a href="#twitter"><FaTwitter /></a>
+            <a href="#instagram"><FaInstagram /></a>
+            <a href="#linkedin"><FaLinkedinIn /></a>
+          </div>
         </div>
 
         <div className="flexColStart f-right">
@@ -21,6 +29,14 @@ const Footer = () => {
             <span>Services</span>
             <span>Product</span>
             <span>About Us</span>
+          </div>
+        </div>
+
+        <div className="flexColStart f-subscription">
+          <span className="primaryText">Subscribe to our Newsletter</span>
+          <div className="subscription-form">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
           </div>
         </div>
       </div>

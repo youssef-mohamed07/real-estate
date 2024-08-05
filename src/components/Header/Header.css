@@ -1,13 +1,16 @@
+/* General styles */
 .h-wrapper {
   z-index: 99;
   position: sticky;
   top: 0;
+  transition: background-color 0.3s ease-in-out;
 }
 .h-container {
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: var(--secondary);
   justify-content: space-between;
+  transition: color 0.3s ease-in-out;
 }
 
 .h-menu {
@@ -15,9 +18,29 @@
 }
 .h-menu > *:hover {
   cursor: pointer;
+  color: var(--primary);
 }
 .menu-icon {
   display: none;
+}
+
+.dark-mode-toggle {
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --secondary: #ffffff;
+  --black: #000000;
+  --primary: #1a73e8;
+  background-color: #121212;
+  color: var(--secondary);
+}
+
+.h-wrapper.dark {
+  background-color: #121212;
 }
 
 @media (max-width: 768px) {
@@ -40,4 +63,23 @@
     padding: 3rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   }
+  .h-menu.open {
+    display: flex;
+    opacity: 1;
+  }
+  .h-menu.closed {
+    display: none;
+    opacity: 0;
+  }
+  .menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}
+
+/* Transition and animation for the menu */
+.h-menu {
+  transition: opacity 0.3s ease-in-out;
 }
